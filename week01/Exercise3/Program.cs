@@ -4,25 +4,35 @@ class Program
 {
     static void Main(string[] args)
     {
-        {
-            Console.Write("What is the magic number? ");
-            int magicNumber = int.Parse(Console.ReadLine());
+        Fraction fraction1 = new Fraction();
 
-            Console.Write("What is your guess? ");
-            int guess = int.Parse(Console.ReadLine());
+        Fraction fraction2 = new Fraction(5);
 
-            if (guess < magicNumber)
-            {
-                Console.WriteLine("Higher");
-            }
-            else if (guess > magicNumber)
-            {
-                Console.WriteLine("Lower");
-            }
-            else
-            {
-                Console.WriteLine("You guessed it!");
-            }
-        }
+        Fraction fraction3 = new Fraction(3, 4);
+
+        Fraction fraction4 = new Fraction(1, 3);
+
+        Console.WriteLine(fraction1.GetFractionString());
+        Console.WriteLine(fraction1.GetDecimalValue());
+
+        Console.WriteLine(fraction2.GetFractionString());
+        Console.WriteLine(fraction2.GetDecimalValue());
+
+        Console.WriteLine(fraction3.GetFractionString());
+        Console.WriteLine(fraction3.GetDecimalValue());
+
+        Console.WriteLine(fraction4.GetFractionString());
+        Console.WriteLine(fraction4.GetDecimalValue());
+
+        // Test the setters
+        fraction3.SetTop(5);
+        fraction3.SetBottom(6);
+
+        // Test the getters
+        Console.WriteLine(fraction3.GetTop());
+        Console.WriteLine(fraction3.GetBottom());
+
+        Console.WriteLine(fraction3.GetFractionString());
+        Console.WriteLine(fraction3.GetDecimalValue());
     }
 }
